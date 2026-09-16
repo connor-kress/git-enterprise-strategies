@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders the team greeting and gator logo', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByText('Hello World! This is our team project.')).toBeInTheDocument();
+  expect(screen.getByRole('img', { name: 'logo' })).toHaveAttribute('src', 'gator.gif');
 });
